@@ -7,6 +7,15 @@ import { ensureAuthenticated } from './middleware/ensureAuthenticated'
 
 const router = Router()
 
+/**
+ * Routes to authenticate, create new messages, get last messages and profile data
+ *
+ * @POST '/authenticate'      authenticate user with Github API
+ * @POST '/messages'          create a new massage
+ * @GET '/messages/last3'     get three last messages
+ * @GET '/profile'            get profile data from Github API
+ */
+
 router.post('/authenticate', new AuthenticateUserController().handle)
 
 router.post(
